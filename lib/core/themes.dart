@@ -8,6 +8,10 @@ class AppThemes {
   static const Color secondaryText = Color(0xFF8A8A8A);
   static const Color labelText = Color(0xFF000000);
   static const Color custom = Color(0xFFDDE6FF);
+  static const Color doctorInfoBG = Color(0xFF00BFA5);
+  static const Color doctorInfoBGSecond = Color(0xFF00897B);
+
+
   static const RadialGradient gradient = RadialGradient(
     colors: [Color(0xFFdfe9f3), Color(0xFFffffff)],
     center: Alignment.bottomRight,
