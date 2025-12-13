@@ -1,5 +1,7 @@
 import 'package:client/core/themes.dart';
+import 'package:client/features/chat/presentation/screens/chat_screen.dart';
 import 'package:client/features/home/presentation/widgets/calender.dart';
+import 'package:client/features/home/presentation/widgets/doctor_card.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,21 +14,83 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+  late final List<Widget> _screens = [
+    _buildHome(),
+    const ChatScreen(),
+    const Center(child: Text('Profile Screen')),
+    const Center(child: Text('Calendar Screen')),
+  ];
+  final doctorsList = [
+    {
+      'name': 'Dr. Jane Doe',
+      'specialty': 'Cardiologist',
+      'image': 'assets/images/user.png',
+    },
+    {
+      'name': 'Dr. John Smith',
+      'specialty': 'Dermatologist',
+      'image': 'assets/images/robotic.png',
+    },
+    {
+      'name': 'Dr. Emily Johnson',
+      'specialty': 'Pediatrician',
+      'image': 'assets/images/user.png',
+    },
+    {
+      'name': 'Dr. Jane Doe',
+      'specialty': 'Cardiologist',
+      'image': 'assets/images/user.png',
+    },
+    {
+      'name': 'Dr. John Smith',
+      'specialty': 'Dermatologist',
+      'image': 'assets/images/robotic.png',
+    },
+    {
+      'name': 'Dr. Emily Johnson',
+      'specialty': 'Pediatrician',
+      'image': 'assets/images/user.png',
+    },
+    {
+      'name': 'Dr. Jane Doe',
+      'specialty': 'Cardiologist',
+      'image': 'assets/images/user.png',
+    },
+    {
+      'name': 'Dr. John Smith',
+      'specialty': 'Dermatologist',
+      'image': 'assets/images/robotic.png',
+    },
+    {
+      'name': 'Dr. Emily Johnson',
+      'specialty': 'Pediatrician',
+      'image': 'assets/images/user.png',
+    },
+  ];
+
+  Future<bool> _onWillPop() async {
+    if (_currentIndex != 0) {
+      setState(() {
+        _currentIndex = 0;
+      });
+      return false;
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: WillPopScope(
+          onWillPop: _onWillPop,
           child: Padding(
-            padding: const EdgeInsets.symmetric( horizontal: 20.0, vertical: 30.0),
-            child: Column(
-              children: [
-                _buildHeader(),
-                const SizedBox(height: 24),
-                CalendarWidget(),
-                // _buildMessages(),
-              ],
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 30.0,
             ),
+            child: IndexedStack(index: _currentIndex, children: _screens),
           ),
         ),
       ),
@@ -35,90 +99,51 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         animationDuration: const Duration(milliseconds: 200),
         color: AppThemes.custom,
-
+        index: _currentIndex,
         items: <Widget>[
           FaIcon(FontAwesomeIcons.house, size: 20),
           FaIcon(FontAwesomeIcons.message, size: 25),
           FaIcon(FontAwesomeIcons.user, size: 25),
           FaIcon(FontAwesomeIcons.calendarPlus, size: 25),
         ],
-        onTap: (index) {},
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
 
-  // _buildHeader() {
-  //   return Column(
-  //     children: [
-  //       Row(
-  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //         children: [
-  //           Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             crossAxisAlignment: CrossAxisAlignment.center,
-  //             children: [
-  //               CircleAvatar(
-  //                 radius: 24,
-  //                 backgroundImage: AssetImage('assets/images/user.png'),
-  //               ),
-  //               const SizedBox(width: 12),
-  //               Column(
-  //                 crossAxisAlignment: CrossAxisAlignment.start,
-  //                 children: [
-  //                   Text(
-  //                     "Hello, John",
-  //                     style: Theme.of(context).textTheme.titleLarge,
-  //                   ),
-  //                   const SizedBox(height: 2),
-  //                   Text(
-  //                     "Good Morning",
-  //                     style: Theme.of(context).textTheme.bodyMedium,
-  //                   ),
-  //                 ],
-  //               ),
-  //             ],
-  //           ),
-  //           FaIcon(
-  //             FontAwesomeIcons.solidBell,
-  //             size: 21,
-  //             color: AppThemes.navigationBarColor.colors.first,
-  //           ),
-  //         ],
-  //       ),
-  //       const SizedBox(height: 24),
-  //       Row(
-  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //         crossAxisAlignment: CrossAxisAlignment.center,
-  //         children: [
-  //           FaIcon(FontAwesomeIcons.userDoctor, color: AppThemes.primaryBlue),
-  //           SizedBox(width: 16),
-  //           Expanded(
-  //             child: TextField(
-  //               decoration: InputDecoration(
-  //                 filled: true,
-  //                 fillColor: AppThemes.lightField,
-  //                 prefixIcon: Icon(
-  //                   Icons.search,
-  //                   color: AppThemes.secondaryText,
-  //                 ),
+  Widget _buildHome() {
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(child: _buildHeader()),
+        SliverToBoxAdapter(child: const SizedBox(height: 24)),
 
-  //                 focusedBorder: OutlineInputBorder(
-  //                   borderSide: BorderSide(color: AppThemes.primaryBlue),
-  //                 ),
-  //                 hintText: 'Search',
-  //                 hintStyle: TextStyle(color: AppThemes.secondaryText),
-  //                 border: OutlineInputBorder(
-  //                   borderRadius: BorderRadius.circular(16.0),
-  //                   borderSide: BorderSide.none,
-  //                 ),
-  //               ),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     ],
-  //   );
-  // }
+        SliverToBoxAdapter(child: CalendarWidget()),
+        SliverToBoxAdapter(child: const SizedBox(height: 24)),
+
+        SliverToBoxAdapter(
+          child: Text(
+            'Doctors Near You',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
+
+        SliverToBoxAdapter(child: const SizedBox(height: 16)),
+
+        Expanded(
+          child: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => DoctorCard(doctor: doctorsList[index]),
+              childCount: doctorsList.length,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   Widget _buildHeader() {
     return Column(
@@ -129,7 +154,6 @@ class _HomeScreenState extends State<HomeScreen> {
             Expanded(
               child: Row(
                 children: [
-
                   Stack(
                     children: [
                       const CircleAvatar(
@@ -174,7 +198,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-
 
             Stack(
               clipBehavior: Clip.none,
@@ -221,9 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: IconButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 icon: FaIcon(
                   FontAwesomeIcons.userDoctor,
                   color: AppThemes.primaryBlue,
@@ -251,9 +272,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppThemes.secondaryText,
                       size: 22,
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                   ),
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
@@ -280,9 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                onChanged: (value) {
-    
-                },
+                onChanged: (value) {},
               ),
             ),
           ],
@@ -290,7 +307,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
-
 
   String _getGreeting() {
     final hour = DateTime.now().hour;

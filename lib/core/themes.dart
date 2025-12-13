@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppThemes {
   static const Color primaryBlue = Color(0xFF2F6BFF);
+  static const Color secondaryBlueLight = Color(0xFF1E3A8A);
   static const Color lightField = Color(0xFFF1F5FF);
   static const Color background = Color(0xFFFFFFFF);
   static const Color secondaryText = Color(0xFF8A8A8A);
@@ -22,6 +23,7 @@ class AppThemes {
     useMaterial3: true,
     scaffoldBackgroundColor: Colors.transparent,
     primaryColor: primaryBlue,
+    fontFamily: 'Figtree',
 
     appBarTheme: const AppBarTheme(
       backgroundColor: background,
@@ -36,6 +38,14 @@ class AppThemes {
       ),
     ),
 
+    cardTheme : const CardThemeData(
+      color: AppThemes.custom,
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+    ),
+
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 22,
@@ -45,7 +55,7 @@ class AppThemes {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: Colors.black,
+        color: AppThemes.secondaryBlueLight,
       ),
       bodyMedium: TextStyle(fontSize: 13, color: secondaryText),
       labelLarge: TextStyle(

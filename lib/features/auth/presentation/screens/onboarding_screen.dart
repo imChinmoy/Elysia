@@ -1,4 +1,4 @@
-import 'package:client/features/auth/presentation/screens/login_screen.dart';
+// import 'package:client/features/auth/presentation/screens/login_screen.dart';
 import 'package:client/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -28,8 +28,8 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(
-        fontSize: 28,
-        fontWeight: FontWeight.w900,
+        fontSize: 38,
+        fontWeight: FontWeight.w800,
         color:
             Theme.of(context).appBarTheme.titleTextStyle?.color ?? Colors.white,
         letterSpacing: -0.5,
