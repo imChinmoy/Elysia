@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppTextField extends StatelessWidget {
   final String label;
   final String hint;
+  final TextEditingController controller;
   final bool obscureText;
   final Widget? suffixIcon;
 
@@ -11,7 +12,8 @@ class AppTextField extends StatelessWidget {
     required this.label,
     required this.hint,
     this.obscureText = false,
-    this.suffixIcon,
+    this.suffixIcon, 
+    required this.controller,
   });
 
   @override
@@ -27,6 +29,7 @@ class AppTextField extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextFormField(
+          controller: controller,
           obscureText: obscureText,
           obscuringCharacter: '•',
           decoration: InputDecoration(hintText: hint, suffixIcon: suffixIcon),
