@@ -49,7 +49,14 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   json_annotation: ^4.8.1
+  freezed_annotation: 
   freezed: 
+  google_maps_flutter:
+  geolocator:
+  permission_handler:
+  url_launcher:
+  http: 
+
 
 
 dev_dependencies:

@@ -147,7 +147,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                 AppTextField(
                   label: 'role',
                   hint: 'doctor/ patient',
-                  controller: _emailController,
+                  controller: _role,
                 ),
 
                 const SizedBox(height: 8),

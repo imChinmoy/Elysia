@@ -53,6 +53,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     String role,
   ) async {
     try {
+            log(dio.options.baseUrl);
       final response = await dio.post(
         '/auth/register',
         data: {

@@ -1,4 +1,5 @@
 import 'package:client/core/themes.dart';
+import 'package:client/features/auth/data/models/user_model.dart';
 import 'package:client/features/auth/presentation/screens/login_screen.dart';
 import 'package:client/features/auth/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   
+
+  Hive.registerAdapter(UserModelAdapter());
   runApp(ProviderScope(child: const MyApp()));
 }
 

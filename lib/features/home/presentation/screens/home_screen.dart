@@ -1,7 +1,7 @@
 import 'package:client/core/themes.dart';
-import 'package:client/features/chat/presentation/screens/chat_screen.dart';
 import 'package:client/features/home/presentation/widgets/calender.dart';
 import 'package:client/features/home/presentation/widgets/doctor_card.dart';
+import 'package:client/features/medical/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   late final List<Widget> _screens = [
     _buildHome(),
-    const ChatScreen(),
+    const MapScreen(),
     const Center(child: Text('Profile Screen')),
     const Center(child: Text('Calendar Screen')),
   ];
@@ -87,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
           onWillPop: _onWillPop,
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 30.0,
+              horizontal: 0.0,
+              vertical: 15.0,
             ),
             child: IndexedStack(index: _currentIndex, children: _screens),
           ),

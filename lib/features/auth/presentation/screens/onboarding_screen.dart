@@ -1,5 +1,6 @@
 // import 'package:client/features/auth/presentation/screens/login_screen.dart';
 import 'package:client/features/auth/presentation/screens/login_screen.dart';
+import 'package:client/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
@@ -11,7 +12,7 @@ class OnboardingScreen extends StatelessWidget {
   void _onIntroEnd(BuildContext context) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => const LoginScreen()),
+      MaterialPageRoute(builder: (_) => const HomeScreen()),
     );
   }
 

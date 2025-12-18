@@ -1,4 +1,4 @@
-import 'package:client/features/chat/presentation/widgets/header.dart';
+import 'package:client/features/medical/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -12,7 +12,8 @@ class ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Column(children: [const Header()])),
+      body: MapScreen(),
+
     );
   }
 }
