@@ -197,9 +197,9 @@ class _$MedicalPlaceImpl implements _MedicalPlace {
       required this.address,
       required this.type,
       @LatLngConverter() required this.location,
-      required this.distance,
-      required this.rating,
-      required this.isOpen});
+      this.distance = 0.0,
+      this.rating = 0.0,
+      this.isOpen = true});
 
   factory _$MedicalPlaceImpl.fromJson(Map<String, dynamic> json) =>
       _$$MedicalPlaceImplFromJson(json);
@@ -216,10 +216,13 @@ class _$MedicalPlaceImpl implements _MedicalPlace {
   @LatLngConverter()
   final LatLng location;
   @override
+  @JsonKey()
   final double distance;
   @override
+  @JsonKey()
   final double rating;
   @override
+  @JsonKey()
   final bool isOpen;
 
   @override

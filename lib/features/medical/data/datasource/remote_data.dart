@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:client/core/constants.dart';
 import 'package:client/core/network/dio_client.dart';
 import 'package:client/features/medical/data/models/position_model.dart';
@@ -31,9 +33,9 @@ class RemoteDataImpl implements RemoteData {
         e.response?.data['message'] ?? 'Failed to get current location',
       );
     } catch (e) {
-      debugPrint(e.toString());
+      log(e.toString());
+      rethrow;
     }
-    throw UnimplementedError();
   }
 
   @override
@@ -50,14 +52,13 @@ class RemoteDataImpl implements RemoteData {
       if (res.statusCode != 200) {
         return [];
       }
-
+      // log('Places : ${res.data['data']}');
       return (res.data['data'] as List)
           .map((e) => MedicalPlace.fromJson(e))
           .toList();
     } catch (e) {
-      debugPrint(e.toString());
+      log('Error : $e.toString()');
+      rethrow;
     }
-
-    throw UnimplementedError();
   }
 }

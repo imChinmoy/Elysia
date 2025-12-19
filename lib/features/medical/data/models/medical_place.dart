@@ -14,9 +14,9 @@ class MedicalPlace with _$MedicalPlace  {
     required String address,
     required MedicalType type,
     @LatLngConverter() required LatLng location,
-    required double distance,
-    required double rating,
-    required bool isOpen
+    @Default(0.0) required double distance,
+    @Default(0.0) required double rating,
+    @Default(true) required bool isOpen
   }) = _MedicalPlace;
 
   factory MedicalPlace.fromJson(Map<String, dynamic > json ) => _$MedicalPlaceFromJson(json);
