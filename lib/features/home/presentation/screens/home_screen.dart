@@ -1,4 +1,6 @@
 import 'package:client/core/themes.dart';
+import 'package:client/features/chat/presentation/screens/chat_screen.dart';
+import 'package:client/features/chat/presentation/screens/contact_screen.dart';
 import 'package:client/features/home/presentation/widgets/calender.dart';
 import 'package:client/features/home/presentation/widgets/doctor_card.dart';
 import 'package:client/features/medical/presentation/screens/map_screen.dart';
@@ -18,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late final List<Widget> _screens = [
     _buildHome(),
     const MapScreen(),
-    const Center(child: Text('Profile Screen')),
+    const ContactScreen(),
     const Center(child: Text('Calendar Screen')),
   ];
   final doctorsList = [
@@ -102,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _currentIndex,
         items: <Widget>[
           FaIcon(FontAwesomeIcons.house, size: 20),
-          FaIcon(FontAwesomeIcons.message, size: 25),
+          FaIcon(FontAwesomeIcons.mapLocationDot, size: 25),
           FaIcon(FontAwesomeIcons.user, size: 25),
           FaIcon(FontAwesomeIcons.calendarPlus, size: 25),
         ],
