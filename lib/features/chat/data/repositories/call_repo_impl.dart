@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:client/core/error/failure.dart';
 import 'package:client/features/chat/data/datasource/api_signaling_datasource.dart';
 import 'package:client/features/chat/data/datasource/api_webrtc_datasource.dart';
 import 'package:client/features/chat/domain/repositories/call_repo.dart';
@@ -7,18 +8,18 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 
 class CallRepositoryImpl implements CallRepository {
   final LocalDataSource webrtc;
-  final ApiSignalingDatasource signaling;
+  final SignalingDatasource signaling;
 
   CallRepositoryImpl(this.webrtc, this.signaling);
   @override
-  Future<void> initialize(String roomId) async {
+  Future<Failure?> initialize(String roomId) async {
     try {
       //Init
       await webrtc.init();
       //Connect
       signaling.connect();
       signaling.joinRoom(roomId);
-      
+
       //Offer
       signaling.onOffer((offer) async {
         await webrtc.setRemoteDescription(
@@ -55,10 +56,11 @@ class CallRepositoryImpl implements CallRepository {
     } catch (e) {
       log(e.toString());
     }
+    return null;
   }
 
   @override
-  Future<void> startCall(String roomId) async {
+  Future<Failure?> startCall(String roomId) async {
     try {
       final offer = await webrtc.createOffer();
       await webrtc.setLocalDescription(offer);
@@ -67,6 +69,8 @@ class CallRepositoryImpl implements CallRepository {
     } catch (e) {
       log(e.toString());
     }
+    
+    return null;
   }
 
   @override

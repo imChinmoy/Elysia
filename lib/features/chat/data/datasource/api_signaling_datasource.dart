@@ -1,8 +1,8 @@
 import 'package:socket_io_client/socket_io_client.dart';
 
-class ApiSignalingDatasource {
+class SignalingDatasource {
   final Socket socket;
-  ApiSignalingDatasource(this.socket);
+  SignalingDatasource(this.socket);
 
   void connect() => socket.connect();
 

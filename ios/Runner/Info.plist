@@ -49,5 +49,9 @@
 	<string>We need your location to show nearby hospitals</string>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
-</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(Call) Camera Usage!</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(Call) Microphone Usage!</string>
+	</dict>
 </plist>

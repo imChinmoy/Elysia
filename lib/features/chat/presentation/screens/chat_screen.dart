@@ -1,5 +1,5 @@
 import 'package:client/features/chat/domain/entities/doctor_ui_entity.dart';
-import 'package:client/features/chat/presentation/state/stream_provider.dart';
+import 'package:client/features/chat/presentation/state/chat/stream_provider.dart';
 import 'package:client/features/chat/presentation/widgets/chat_input_field.dart';
 import 'package:client/features/chat/presentation/widgets/message_bubble.dart';
 import 'package:flutter/material.dart';

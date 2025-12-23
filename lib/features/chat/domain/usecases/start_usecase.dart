@@ -1,3 +1,4 @@
+import 'package:client/core/error/failure.dart';
 import 'package:client/features/chat/domain/repositories/call_repo.dart';
 
 class StartUseCase {
@@ -7,7 +8,7 @@ class StartUseCase {
     this.repository
   );
 
-  Future<void> call (String roomId) async {
-    await repository.startCall(roomId);
+  Future<Failure?> call (String roomId) async {
+    return await repository.startCall(roomId);
   }
 }

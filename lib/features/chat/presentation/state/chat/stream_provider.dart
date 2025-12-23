@@ -2,7 +2,7 @@ import 'package:client/features/chat/data/datasource/api_chat_datasource.dart';
 import 'package:client/features/chat/data/repositories/chat_repo%20_impl.dart';
 import 'package:client/features/chat/domain/entities/chat_message.dart';
 import 'package:client/features/chat/domain/repositories/chat_repo.dart';
-import 'package:client/features/chat/presentation/state/notifier.dart';
+import 'package:client/features/chat/presentation/state/chat/chat_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final remoteDataSourceProvider = Provider<RemoteDataSource>((ref) {
