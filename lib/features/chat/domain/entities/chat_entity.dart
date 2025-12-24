@@ -1,4 +1,4 @@
-class ChatEntity{
+class ChatEntity {
   final String id;
   final String name;
   final List<String> messages;

@@ -69,7 +69,7 @@ class CallRepositoryImpl implements CallRepository {
     } catch (e) {
       log(e.toString());
     }
-    
+
     return null;
   }
 

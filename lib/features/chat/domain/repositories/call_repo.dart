@@ -5,5 +5,4 @@ abstract class CallRepository {
   Future<Failure?> startCall(String roomId);
   // Future<void> answerCall(String receiverId);
   Future<void> endCall(String roomId);
-
 }

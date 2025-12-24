@@ -12,7 +12,8 @@ part of 'chat_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 ChatModel _$ChatModelFromJson(Map<String, dynamic> json) {
   return _ChatModel.fromJson(json);
@@ -37,12 +38,13 @@ abstract class $ChatModelCopyWith<$Res> {
   factory $ChatModelCopyWith(ChatModel value, $Res Function(ChatModel) then) =
       _$ChatModelCopyWithImpl<$Res, ChatModel>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      List<String> messages,
-      String senderId,
-      String receiverId});
+  $Res call({
+    String id,
+    String name,
+    List<String> messages,
+    String senderId,
+    String receiverId,
+  });
 }
 
 /// @nodoc
@@ -64,28 +66,31 @@ class _$ChatModelCopyWithImpl<$Res, $Val extends ChatModel>
     Object? senderId = null,
     Object? receiverId = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      messages: null == messages
-          ? _value.messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as String,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as String,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            messages: null == messages
+                ? _value.messages
+                : messages // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
+            senderId: null == senderId
+                ? _value.senderId
+                : senderId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            receiverId: null == receiverId
+                ? _value.receiverId
+                : receiverId // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -93,16 +98,18 @@ class _$ChatModelCopyWithImpl<$Res, $Val extends ChatModel>
 abstract class _$$ChatModelImplCopyWith<$Res>
     implements $ChatModelCopyWith<$Res> {
   factory _$$ChatModelImplCopyWith(
-          _$ChatModelImpl value, $Res Function(_$ChatModelImpl) then) =
-      __$$ChatModelImplCopyWithImpl<$Res>;
+    _$ChatModelImpl value,
+    $Res Function(_$ChatModelImpl) then,
+  ) = __$$ChatModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      List<String> messages,
-      String senderId,
-      String receiverId});
+  $Res call({
+    String id,
+    String name,
+    List<String> messages,
+    String senderId,
+    String receiverId,
+  });
 }
 
 /// @nodoc
@@ -110,8 +117,9 @@ class __$$ChatModelImplCopyWithImpl<$Res>
     extends _$ChatModelCopyWithImpl<$Res, _$ChatModelImpl>
     implements _$$ChatModelImplCopyWith<$Res> {
   __$$ChatModelImplCopyWithImpl(
-      _$ChatModelImpl _value, $Res Function(_$ChatModelImpl) _then)
-      : super(_value, _then);
+    _$ChatModelImpl _value,
+    $Res Function(_$ChatModelImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -122,41 +130,43 @@ class __$$ChatModelImplCopyWithImpl<$Res>
     Object? senderId = null,
     Object? receiverId = null,
   }) {
-    return _then(_$ChatModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      messages: null == messages
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as String,
-      receiverId: null == receiverId
-          ? _value.receiverId
-          : receiverId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$ChatModelImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        messages: null == messages
+            ? _value._messages
+            : messages // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
+        senderId: null == senderId
+            ? _value.senderId
+            : senderId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        receiverId: null == receiverId
+            ? _value.receiverId
+            : receiverId // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ChatModelImpl implements _ChatModel {
-  const _$ChatModelImpl(
-      {required this.id,
-      required this.name,
-      required final List<String> messages,
-      required this.senderId,
-      required this.receiverId})
-      : _messages = messages;
+  const _$ChatModelImpl({
+    required this.id,
+    required this.name,
+    required final List<String> messages,
+    required this.senderId,
+    required this.receiverId,
+  }) : _messages = messages;
 
   factory _$ChatModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChatModelImplFromJson(json);
@@ -199,8 +209,14 @@ class _$ChatModelImpl implements _ChatModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name,
-      const DeepCollectionEquality().hash(_messages), senderId, receiverId);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    name,
+    const DeepCollectionEquality().hash(_messages),
+    senderId,
+    receiverId,
+  );
 
   @JsonKey(ignore: true)
   @override
@@ -210,19 +226,18 @@ class _$ChatModelImpl implements _ChatModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ChatModelImplToJson(
-      this,
-    );
+    return _$$ChatModelImplToJson(this);
   }
 }
 
 abstract class _ChatModel implements ChatModel {
-  const factory _ChatModel(
-      {required final String id,
-      required final String name,
-      required final List<String> messages,
-      required final String senderId,
-      required final String receiverId}) = _$ChatModelImpl;
+  const factory _ChatModel({
+    required final String id,
+    required final String name,
+    required final List<String> messages,
+    required final String senderId,
+    required final String receiverId,
+  }) = _$ChatModelImpl;
 
   factory _ChatModel.fromJson(Map<String, dynamic> json) =
       _$ChatModelImpl.fromJson;

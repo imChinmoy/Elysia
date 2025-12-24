@@ -8,20 +8,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final remoteDataSourceProvider = Provider<RemoteDataSource>((ref) {
   final dataSource = RemoteDataSourceImpl();
   ref.onDispose(dataSource.dispose);
-  
+
   return dataSource;
 });
-
-
 
 final chatRepositoryProvider = Provider<ChatRepository>((ref) {
   return ChatRepositoryImpl(ref.read(remoteDataSourceProvider));
 });
 
-
-
-final chatProvider =
-    StateNotifierProvider<ChatNotifier, List<ChatMessage>>((ref) {
+final chatProvider = StateNotifierProvider<ChatNotifier, List<ChatMessage>>((
+  ref,
+) {
   return ChatNotifier(
     ref.read(chatRepositoryProvider),
     'me', // replace with auth user id

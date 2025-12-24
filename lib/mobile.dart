@@ -36,10 +36,9 @@ class Mobile extends StatelessWidget {
                 ),
               ),
             ],
-          )
           ),
+        ),
       ),
-      );
+    );
   }
 }
-

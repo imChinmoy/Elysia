@@ -6,8 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 part 'medical_place.freezed.dart';
 part 'medical_place.g.dart';
 
-@freezed 
-class MedicalPlace with _$MedicalPlace  {
+@freezed
+class MedicalPlace with _$MedicalPlace {
   const factory MedicalPlace({
     required String id,
     required String name,
@@ -16,11 +16,12 @@ class MedicalPlace with _$MedicalPlace  {
     @LatLngConverter() required LatLng location,
     @Default(0.0) required double distance,
     @Default(0.0) required double rating,
-    @Default(true) required bool isOpen
+    @Default(true) required bool isOpen,
   }) = _MedicalPlace;
 
-  factory MedicalPlace.fromJson(Map<String, dynamic > json ) => _$MedicalPlaceFromJson(json);
-} 
+  factory MedicalPlace.fromJson(Map<String, dynamic> json) =>
+      _$MedicalPlaceFromJson(json);
+}
 
 extension MedicalPlaceMapper on MedicalPlace {
   MedicalPlaceEntity toEntity() => MedicalPlaceEntity(
@@ -31,7 +32,6 @@ extension MedicalPlaceMapper on MedicalPlace {
     location: location,
     distance: distance,
     rating: rating,
-    isOpen: isOpen
+    isOpen: isOpen,
   );
 }
-

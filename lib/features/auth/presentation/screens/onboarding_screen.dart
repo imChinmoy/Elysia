@@ -82,7 +82,10 @@ class OnboardingScreen extends StatelessWidget {
               title: "Begin Your Wellness Journey",
               body:
                   "Join thousands of users who trust MediCare for their health management. Start today and take the first step toward a healthier tomorrow.",
-              image: _buildLottie('assets/animations/Ultrasound.json', width: 300),
+              image: _buildLottie(
+                'assets/animations/Ultrasound.json',
+                width: 300,
+              ),
               footer: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
@@ -116,9 +119,7 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     TextButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Learn More',
                         style: TextStyle(

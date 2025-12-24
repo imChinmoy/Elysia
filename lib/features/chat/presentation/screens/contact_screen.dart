@@ -4,7 +4,6 @@ import 'package:client/features/chat/presentation/widgets/doctor_tile.dart';
 import 'package:flutter/material.dart';
 
 class ContactScreen extends StatelessWidget {
-  
   const ContactScreen({super.key});
 
   @override

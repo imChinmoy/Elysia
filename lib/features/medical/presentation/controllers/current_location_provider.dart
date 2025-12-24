@@ -10,8 +10,6 @@ final currentLocationProvider =
       return CurrentLocationNotifier(repository);
     });
 
-
-
 class CurrentLocationNotifier extends StateNotifier<AsyncValue<LatLng>> {
   final MedicalRepository repository;
 

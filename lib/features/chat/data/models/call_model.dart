@@ -6,7 +6,6 @@ class CallState {
 
   const CallState({required this.status, this.error});
 
-  
   const CallState.initial() : status = CallStatus.idle, error = null;
 
   CallState copyWith({CallStatus? status, String? error}) {

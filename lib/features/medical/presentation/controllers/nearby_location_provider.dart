@@ -28,7 +28,7 @@ class NearbyMedicalPlacesNotifier
 
       final places = await repository.getNearbyMedicalPlaces(
         latitude,
-        longitude
+        longitude,
       );
 
       state = AsyncValue.data(places);

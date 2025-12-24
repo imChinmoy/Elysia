@@ -26,7 +26,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
   @override
   void initState() {
     super.initState();
-     _emailController = TextEditingController();
+    _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _usernameController = TextEditingController();
     _phoneNumberController = TextEditingController();

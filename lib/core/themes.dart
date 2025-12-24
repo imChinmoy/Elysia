@@ -11,7 +11,6 @@ class AppThemes {
   static const Color doctorInfoBG = Color(0xFF00BFA5);
   static const Color doctorInfoBGSecond = Color(0xFF00897B);
 
-
   static const RadialGradient gradient = RadialGradient(
     colors: [Color(0xFFdfe9f3), Color(0xFFffffff)],
     center: Alignment.bottomRight,
@@ -42,7 +41,7 @@ class AppThemes {
       ),
     ),
 
-    cardTheme : const CardThemeData(
+    cardTheme: const CardThemeData(
       color: AppThemes.custom,
       elevation: 4,
       shape: RoundedRectangleBorder(

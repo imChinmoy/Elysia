@@ -1,5 +1,6 @@
 import 'package:client/features/chat/domain/entities/doctor_ui_entity.dart';
 import 'package:client/features/chat/presentation/screens/chat_screen.dart';
+import 'package:client/features/chat/presentation/screens/videocall_screen.dart';
 import 'package:client/features/chat/presentation/widgets/connect_action_button.dart';
 import 'package:flutter/material.dart';
 
@@ -70,7 +71,10 @@ class DoctorTile extends StatelessWidget {
             icon: Icons.chat_bubble_outline,
             color: Colors.blueAccent,
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => ChatScreen(doctor : doctor)));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ChatScreen(doctor: doctor)),
+              );
             },
           ),
           const SizedBox(width: 8),
@@ -79,7 +83,12 @@ class DoctorTile extends StatelessWidget {
             color: doctor.isOnline ? Colors.green : Colors.grey,
             onTap: doctor.isOnline
                 ? () {
-                    // Start video call
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => CallScreen(roomId: '1234567890'),
+                      ),
+                    );
                   }
                 : null,
           ),

@@ -5,6 +5,8 @@ class GetNearbyMedicalPlacesUseCase {
   final MedicalRepository repository;
   GetNearbyMedicalPlacesUseCase(this.repository);
 
-  Future<List<MedicalPlaceEntity>> call (double latitude, double longitude ) async => await repository.getNearbyMedicalPlaces(latitude, longitude);
-  
+  Future<List<MedicalPlaceEntity>> call(
+    double latitude,
+    double longitude,
+  ) async => await repository.getNearbyMedicalPlaces(latitude, longitude);
 }

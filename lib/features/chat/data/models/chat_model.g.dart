@@ -10,8 +10,9 @@ _$ChatModelImpl _$$ChatModelImplFromJson(Map<String, dynamic> json) =>
     _$ChatModelImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      messages:
-          (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
+      messages: (json['messages'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       senderId: json['senderId'] as String,
       receiverId: json['receiverId'] as String,
     );

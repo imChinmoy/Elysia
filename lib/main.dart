@@ -7,12 +7,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  
 
   Hive.registerAdapter(UserModelAdapter());
   runApp(ProviderScope(child: const MyApp()));
@@ -34,10 +31,8 @@ class _MyAppState extends State<MyApp> {
       title: 'Elysia',
       builder: (context, child) {
         return Container(
-          decoration: const BoxDecoration(
-            gradient: AppThemes.gradient,
-          ),
-          
+          decoration: const BoxDecoration(gradient: AppThemes.gradient),
+
           child: child,
         );
       },

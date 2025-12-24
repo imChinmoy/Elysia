@@ -36,7 +36,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         email: userJson['email'] as String,
         username: userJson['username'] as String,
         role: userJson['role'] as String?,
-        token: token 
+        token: token,
       );
     } catch (e) {
       log(e.toString());
@@ -53,7 +53,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     String role,
   ) async {
     try {
-            log(dio.options.baseUrl);
+      log(dio.options.baseUrl);
       final response = await dio.post(
         '/auth/register',
         data: {

@@ -5,17 +5,14 @@ import 'package:client/features/medical/domain/repositories/medical_repository.d
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dio/dio.dart';
 
-
 final dioProvider = Provider<Dio>((ref) {
   return DioClient.createDio();
 });
-
 
 final remoteDataProvider = Provider<RemoteData>((ref) {
   final dio = ref.watch(dioProvider);
   return RemoteDataImpl(dio: dio);
 });
-
 
 final medicalRepositoryProvider = Provider<MedicalRepository>((ref) {
   final remoteData = ref.watch(remoteDataProvider);

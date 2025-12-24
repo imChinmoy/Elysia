@@ -5,6 +5,5 @@ class GetCurrentLocationUseCase {
   final MedicalRepository repository;
   GetCurrentLocationUseCase({required this.repository});
 
-  Future<Position> call () async  => await repository.getCurrentLocation();
-
+  Future<Position> call() async => await repository.getCurrentLocation();
 }

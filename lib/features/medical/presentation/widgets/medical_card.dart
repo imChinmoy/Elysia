@@ -28,19 +28,35 @@ class MedicalCard extends StatelessWidget {
           Row(
             children: [
               Text(
-            medicalPlace.name,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          Spacer(),
-          Text(medicalPlace.isOpen? 'Open' : 'Closed', style: TextStyle(color: medicalPlace.isOpen? Colors.green : Colors.red, fontWeight: FontWeight.w600, fontSize: 12),),
+                medicalPlace.name,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Spacer(),
+              Text(
+                medicalPlace.isOpen ? 'Open' : 'Closed',
+                style: TextStyle(
+                  color: medicalPlace.isOpen ? Colors.green : Colors.red,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 5),
           Text(medicalPlace.address, style: const TextStyle(fontSize: 16)),
           const SizedBox(height: 5),
-          Text('Distance: ${medicalPlace.distance} km', style: const TextStyle(fontSize: 16)),
+          Text(
+            'Distance: ${medicalPlace.distance} km',
+            style: const TextStyle(fontSize: 16),
+          ),
           const SizedBox(height: 5),
-          Text('Rating: ${medicalPlace.rating}', style: const TextStyle(fontSize: 16)),
+          Text(
+            'Rating: ${medicalPlace.rating}',
+            style: const TextStyle(fontSize: 16),
+          ),
         ],
       ),
     );

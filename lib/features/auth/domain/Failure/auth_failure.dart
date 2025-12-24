@@ -3,14 +3,14 @@ sealed class AuthFailure {
   AuthFailure(this.message);
 }
 
-class InvalidCredentials extends AuthFailure{
+class InvalidCredentials extends AuthFailure {
   InvalidCredentials() : super('Invalid Credentials Provided');
 }
 
-class NetworkError extends AuthFailure{
+class NetworkError extends AuthFailure {
   NetworkError() : super('Network Error Occurred');
 }
 
-class UnknownError extends AuthFailure{
+class UnknownError extends AuthFailure {
   UnknownError() : super('An Unknown Error Occurred');
 }

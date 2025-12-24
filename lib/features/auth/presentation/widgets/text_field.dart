@@ -12,7 +12,7 @@ class AppTextField extends StatelessWidget {
     required this.label,
     required this.hint,
     this.obscureText = false,
-    this.suffixIcon, 
+    this.suffixIcon,
     required this.controller,
   });
 

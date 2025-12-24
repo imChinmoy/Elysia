@@ -5,5 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 abstract class MedicalRepository {
   Future<Position> getCurrentLocation();
-  Future<List<MedicalPlaceEntity>> getNearbyMedicalPlaces(double latitude, double longitude);
+  Future<List<MedicalPlaceEntity>> getNearbyMedicalPlaces(
+    double latitude,
+    double longitude,
+  );
 }

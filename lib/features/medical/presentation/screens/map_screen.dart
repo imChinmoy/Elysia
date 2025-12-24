@@ -95,8 +95,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     }
   }
 
-
-
   Future<List<LatLng>> getRouteCoordinatesORS(
     LatLng origin,
     LatLng destination,
@@ -198,7 +196,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     );
   }
 
-
   void _updateMarkers(List<MedicalPlaceEntity> places) {
     final newMarkers = places.map((place) {
       return Marker(
@@ -215,8 +212,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       _markers = newMarkers;
     });
   }
-
-
 
   void _showPlaceDetails(MedicalPlaceEntity place) {
     showModalBottomSheet(
@@ -283,7 +278,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {

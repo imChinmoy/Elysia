@@ -4,11 +4,9 @@ import 'package:client/features/chat/domain/repositories/call_repo.dart';
 class InitUseCase {
   final CallRepository repository;
 
-  InitUseCase(
-    this.repository
-  );
+  InitUseCase(this.repository);
 
-  Future<Failure?> call (String roomId) async {
+  Future<Failure?> call(String roomId) async {
     return await repository.initialize(roomId);
   }
 }

@@ -12,8 +12,9 @@ _$MedicalPlaceImpl _$$MedicalPlaceImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       address: json['address'] as String,
       type: $enumDecode(_$MedicalTypeEnumMap, json['type']),
-      location: const LatLngConverter()
-          .fromJson(json['location'] as Map<String, dynamic>?),
+      location: const LatLngConverter().fromJson(
+        json['location'] as Map<String, dynamic>?,
+      ),
       distance: (json['distance'] as num?)?.toDouble() ?? 0.0,
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       isOpen: json['isOpen'] as bool? ?? true,

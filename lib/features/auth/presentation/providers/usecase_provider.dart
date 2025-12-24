@@ -8,7 +8,7 @@ import '../../data/repositories/auth_repo_impl.dart';
 import '../../domain/usecases/login_usecase.dart';
 import '../../domain/repositories/auth_repo.dart';
 
-final dioProvider = Provider<Dio>((ref) =>  DioClient.createDio());
+final dioProvider = Provider<Dio>((ref) => DioClient.createDio());
 
 final authRemoteDataSourceProvider = Provider<AuthRemoteDataSource>(
   (ref) => AuthRemoteDataSourceImpl(ref.read(dioProvider)),
@@ -30,5 +30,5 @@ final loginUseCaseProvider = Provider<LoginUseCase>(
 );
 
 final registerUseCaseProvider = Provider<RegisterUseCase>(
-  (ref) => RegisterUseCase(ref.read(authRepositoryProvider))
+  (ref) => RegisterUseCase(ref.read(authRepositoryProvider)),
 );

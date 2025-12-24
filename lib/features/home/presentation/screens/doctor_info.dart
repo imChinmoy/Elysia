@@ -37,7 +37,10 @@ class DoctorInfo extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [AppThemes.doctorInfoBG, AppThemes.doctorInfoBGSecond],
+                    colors: [
+                      AppThemes.doctorInfoBG,
+                      AppThemes.doctorInfoBGSecond,
+                    ],
                   ),
                 ),
                 child: Column(

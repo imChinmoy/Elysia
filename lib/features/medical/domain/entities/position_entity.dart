@@ -3,6 +3,9 @@ class Position {
   final double longitude;
   final String address;
 
-  Position({required this.latitude, required this.longitude, required this.address});
-  
+  Position({
+    required this.latitude,
+    required this.longitude,
+    required this.address,
+  });
 }

@@ -2,7 +2,6 @@ import 'package:client/features/chat/presentation/state/chat/stream_provider.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class ChatInputField extends ConsumerStatefulWidget {
   const ChatInputField({super.key});
 
@@ -28,9 +27,7 @@ class _ChatInputFieldState extends ConsumerState<ChatInputField> {
         padding: const EdgeInsets.all(8),
         decoration: const BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(color: Colors.black12, blurRadius: 4),
-          ],
+          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
         ),
         child: Row(
           children: [

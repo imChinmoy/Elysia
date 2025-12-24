@@ -12,7 +12,8 @@ part of 'medical_place.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 MedicalPlace _$MedicalPlaceFromJson(Map<String, dynamic> json) {
   return _MedicalPlace.fromJson(json);
@@ -39,18 +40,20 @@ mixin _$MedicalPlace {
 /// @nodoc
 abstract class $MedicalPlaceCopyWith<$Res> {
   factory $MedicalPlaceCopyWith(
-          MedicalPlace value, $Res Function(MedicalPlace) then) =
-      _$MedicalPlaceCopyWithImpl<$Res, MedicalPlace>;
+    MedicalPlace value,
+    $Res Function(MedicalPlace) then,
+  ) = _$MedicalPlaceCopyWithImpl<$Res, MedicalPlace>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String address,
-      MedicalType type,
-      @LatLngConverter() LatLng location,
-      double distance,
-      double rating,
-      bool isOpen});
+  $Res call({
+    String id,
+    String name,
+    String address,
+    MedicalType type,
+    @LatLngConverter() LatLng location,
+    double distance,
+    double rating,
+    bool isOpen,
+  });
 }
 
 /// @nodoc
@@ -75,40 +78,43 @@ class _$MedicalPlaceCopyWithImpl<$Res, $Val extends MedicalPlace>
     Object? rating = null,
     Object? isOpen = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MedicalType,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-      distance: null == distance
-          ? _value.distance
-          : distance // ignore: cast_nullable_to_non_nullable
-              as double,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      isOpen: null == isOpen
-          ? _value.isOpen
-          : isOpen // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as String,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            address: null == address
+                ? _value.address
+                : address // ignore: cast_nullable_to_non_nullable
+                      as String,
+            type: null == type
+                ? _value.type
+                : type // ignore: cast_nullable_to_non_nullable
+                      as MedicalType,
+            location: null == location
+                ? _value.location
+                : location // ignore: cast_nullable_to_non_nullable
+                      as LatLng,
+            distance: null == distance
+                ? _value.distance
+                : distance // ignore: cast_nullable_to_non_nullable
+                      as double,
+            rating: null == rating
+                ? _value.rating
+                : rating // ignore: cast_nullable_to_non_nullable
+                      as double,
+            isOpen: null == isOpen
+                ? _value.isOpen
+                : isOpen // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -116,19 +122,21 @@ class _$MedicalPlaceCopyWithImpl<$Res, $Val extends MedicalPlace>
 abstract class _$$MedicalPlaceImplCopyWith<$Res>
     implements $MedicalPlaceCopyWith<$Res> {
   factory _$$MedicalPlaceImplCopyWith(
-          _$MedicalPlaceImpl value, $Res Function(_$MedicalPlaceImpl) then) =
-      __$$MedicalPlaceImplCopyWithImpl<$Res>;
+    _$MedicalPlaceImpl value,
+    $Res Function(_$MedicalPlaceImpl) then,
+  ) = __$$MedicalPlaceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String address,
-      MedicalType type,
-      @LatLngConverter() LatLng location,
-      double distance,
-      double rating,
-      bool isOpen});
+  $Res call({
+    String id,
+    String name,
+    String address,
+    MedicalType type,
+    @LatLngConverter() LatLng location,
+    double distance,
+    double rating,
+    bool isOpen,
+  });
 }
 
 /// @nodoc
@@ -136,8 +144,9 @@ class __$$MedicalPlaceImplCopyWithImpl<$Res>
     extends _$MedicalPlaceCopyWithImpl<$Res, _$MedicalPlaceImpl>
     implements _$$MedicalPlaceImplCopyWith<$Res> {
   __$$MedicalPlaceImplCopyWithImpl(
-      _$MedicalPlaceImpl _value, $Res Function(_$MedicalPlaceImpl) _then)
-      : super(_value, _then);
+    _$MedicalPlaceImpl _value,
+    $Res Function(_$MedicalPlaceImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -151,55 +160,58 @@ class __$$MedicalPlaceImplCopyWithImpl<$Res>
     Object? rating = null,
     Object? isOpen = null,
   }) {
-    return _then(_$MedicalPlaceImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MedicalType,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-      distance: null == distance
-          ? _value.distance
-          : distance // ignore: cast_nullable_to_non_nullable
-              as double,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      isOpen: null == isOpen
-          ? _value.isOpen
-          : isOpen // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$MedicalPlaceImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        address: null == address
+            ? _value.address
+            : address // ignore: cast_nullable_to_non_nullable
+                  as String,
+        type: null == type
+            ? _value.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as MedicalType,
+        location: null == location
+            ? _value.location
+            : location // ignore: cast_nullable_to_non_nullable
+                  as LatLng,
+        distance: null == distance
+            ? _value.distance
+            : distance // ignore: cast_nullable_to_non_nullable
+                  as double,
+        rating: null == rating
+            ? _value.rating
+            : rating // ignore: cast_nullable_to_non_nullable
+                  as double,
+        isOpen: null == isOpen
+            ? _value.isOpen
+            : isOpen // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$MedicalPlaceImpl implements _MedicalPlace {
-  const _$MedicalPlaceImpl(
-      {required this.id,
-      required this.name,
-      required this.address,
-      required this.type,
-      @LatLngConverter() required this.location,
-      this.distance = 0.0,
-      this.rating = 0.0,
-      this.isOpen = true});
+  const _$MedicalPlaceImpl({
+    required this.id,
+    required this.name,
+    required this.address,
+    required this.type,
+    @LatLngConverter() required this.location,
+    this.distance = 0.0,
+    this.rating = 0.0,
+    this.isOpen = true,
+  });
 
   factory _$MedicalPlaceImpl.fromJson(Map<String, dynamic> json) =>
       _$$MedicalPlaceImplFromJson(json);
@@ -250,7 +262,16 @@ class _$MedicalPlaceImpl implements _MedicalPlace {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, address, type, location, distance, rating, isOpen);
+    runtimeType,
+    id,
+    name,
+    address,
+    type,
+    location,
+    distance,
+    rating,
+    isOpen,
+  );
 
   @JsonKey(ignore: true)
   @override
@@ -260,22 +281,21 @@ class _$MedicalPlaceImpl implements _MedicalPlace {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MedicalPlaceImplToJson(
-      this,
-    );
+    return _$$MedicalPlaceImplToJson(this);
   }
 }
 
 abstract class _MedicalPlace implements MedicalPlace {
-  const factory _MedicalPlace(
-      {required final String id,
-      required final String name,
-      required final String address,
-      required final MedicalType type,
-      @LatLngConverter() required final LatLng location,
-      required final double distance,
-      required final double rating,
-      required final bool isOpen}) = _$MedicalPlaceImpl;
+  const factory _MedicalPlace({
+    required final String id,
+    required final String name,
+    required final String address,
+    required final MedicalType type,
+    @LatLngConverter() required final LatLng location,
+    required final double distance,
+    required final double rating,
+    required final bool isOpen,
+  }) = _$MedicalPlaceImpl;
 
   factory _MedicalPlace.fromJson(Map<String, dynamic> json) =
       _$MedicalPlaceImpl.fromJson;
